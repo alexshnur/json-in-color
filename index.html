@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>JSON in color</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="css/json-in-color.css" />
+</head>
+<body>
+<div class="container" style="margin-top: 20px;">
+	<nav class="navbar navbar-default navbar-inverse" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="https://github.com/alexshnur/" class="btn btn-success navbar-btn"><span>My page on GitHub</span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More plugins <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="http://alexshnur.github.io/drag-n-drop-table-columns/">Drag & Drop Table Columns</a></li>
+							<li><a href="http://alexshnur.github.io/dynamic-url-params-from-in-form/">Dynamic URL params from/in form</a></li>
+							<li><a href="http://alexshnur.github.io/json-in-color/">JSON in color</a></li>
+							<li><a href="#">Resizable table columns</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More modules<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="http://alexshnur.github.io/remove-html-attributes/">Remove HTML attributes</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section class="clearfix">
+		<a href="https://github.com/alexshnur/json-in-color/zipball/master" class="btn btn-primary"><span>Download .zip</span></a>
+		<a href="https://github.com/alexshnur/json-in-color/tarball/master" class="btn btn-primary"><span>Download .tar.gz</span></a>
+		<a href="https://github.com/alexshnur/json-in-color" class="btn btn-warning pull-right"><span>View on GitHub</span></a>
+	</section>
+	<h1>JSON in color</h1>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<blockquote class="blockquote-reverse">
+				<p class="text-warning">Before</p>
+				<footer>Use pre tag</footer>
+			</blockquote>
+			<pre class="json-clean">
+{
+	"allService": {
+		"pre": {
+			"product_identification": true,
+			"product_information": true,
+			"authorization_data": true
+		},
+		"base64": {
+			"authorization_data": true,
+			"product_identification": true,
+			"product_information": true
+		},
+		"array" : [1,2,3,4,5]
+	},
+	"product": {
+		"name": {
+			"product_guid": "GUID",
+			"product_configuration": "Configuration",
+			"product_identification": "Identification",
+			"product_information": "Information",
+			"product_status": "Status"
+		}
+	}
+}
+			</pre>
+		</div>
+		<div class="col-md-6">
+			<blockquote>
+				<p class="text-success">After</p>
+				<footer>Use pre tag</footer>
+			</blockquote>
+			<pre class="json-color"></pre>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<blockquote>
+				<footer>Use div tag</footer>
+			</blockquote>
+			<div class="json-clean-div">
+				{
+				"allService": {
+				"pre": {
+				"product_identification": true,
+				"product_information": true,
+				"authorization_data": true
+				},
+				"base64": {
+				"authorization_data": true,
+				"product_identification": true,
+				"product_information": true
+				},
+				"array" : [1,2,3,4,5]
+				},
+				"product": {
+				"name": {
+				"product_guid": "GUID",
+				"product_configuration": "Configuration",
+				"product_identification": "Identification",
+				"product_information": "Information",
+				"product_status": "Status"
+				}
+				}
+				}
+			</div>
+		</div>
+		<div class="col-md-6">
+			<blockquote>
+				<footer>Use div tag</footer>
+			</blockquote>
+			<div class="json-color-div"></div>
+		</div>
+	</div>
+	<br />
+	<blockquote><p class="text-warning">Add the following to your code</p></blockquote>
+	<kbd>To &lt;head&gt;...</kbd><br />
+	<code>&lt;link rel="stylesheet" href="css/json-in-color.css" /&gt;</code><br /><br />
+	<kbd>To end &lt;body&gt;...</kbd><br />
+	<code>&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;/script&gt;</code><br />
+	<code>&lt;script src="js/json-in-color.js"&gt;&lt;/script&gt;</code><br />
+	<code>&lt;script&gt;</code><br />
+	<code><b>var <i>cleanObject</i></b> = {"allService": {"pre": {"product_identification": true, "product_information": true, "authorization_data": true},</code><br />
+	<code>"base64": {"authorization_data": true, "product_identification": true, "product_information": true}, "array" : [1,2,3,4,5]},</code><br />
+	<code>"product": {"name": {"product_guid": "GUID", "product_configuration": "Configuration", "product_identification": "Identification",</code><br />
+	<code>"product_information": "Information", "product_status": "Status"} } };</code><br /><br />
+	<code>$('&lt;pre/&gt;').html(JSON.stringify(<b><i>cleanObject</i></b>.jsonColor()), <b>null</b>, 3);</code><br />
+	<code>&lt;/script&gt;</code><br /><br />
+</div>
+<script src="js/json-in-color.js" type="text/javascript"></script>
+<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script>
+	var jsonClean = JSON.stringify(JSON.parse($('.json-clean').text()), null, 3),
+		jsonCleanDiv = JSON.stringify(JSON.parse($('.json-clean-div').text()), null, 3);
+	$('.json-color').html(jsonClean.jsonColor());
+	$('.json-color-div').html(jsonCleanDiv.jsonColor());
+</script>
+</body>
+</html>
