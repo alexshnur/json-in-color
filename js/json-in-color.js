@@ -1,9 +1,9 @@
 String.prototype.jsonColor = function() {
 	var jsonLine = /^( *)("[\w.+-]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg,
 		replacer = function(match, pIndent, pKey, pVal, pEnd) {
-		var key = '<span class="json-key">',
-			val = '<span class="json-value">',
-			str = '<span class="json-string">';
+		var key = '<span style="color: #006699;">',
+			val = '<span style="color: #ff6600;">',
+			str = '<span style="color: #d44950;">';
 		var r = pIndent || '';
 		if (pKey) {
 			r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
